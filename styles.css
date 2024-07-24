@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.add-activity-section {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 800px) {
+    .full-width {
+        flex: 1; /* Allow the form group to expand to fill available space */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.activity-form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+.full-width {
+    flex: 1; /* Allow the element to grow and fill the available space */
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-field {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cancelButton {
+    background-color: #dc3545;
+    display: none;
+}
+
+#cancelButton:hover {
+    background-color: #b42b39;
+    display: none;
+
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.left{
+    text-align: right;
+}
+
+nav button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+#block, #unit, #order {
+    width: 60px;
+    display:block;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+.actions button {
+    padding: 5px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.actions button.edit {
+    background-color: #28a745;
+}
+
+.actions button.up, .actions button.down {
+    background-color: #007BFF;
+}
+
+.actions button:hover {
+    opacity: 0.8;
+}
+
+
+#sessionTable tr:nth-child(odd) { 
+    background-color: #f2f2f2; 
+}
+  
+#sessionTable td, #sessionTable th {
+    text-align: left; 
+    border: 1px solid #ccc;
+}
+  
+#sessionTable th { 
+    color: #fff; 
+    background: #51759a; 
+}
+  
+#sessionTable tr.drop-above td {
+    border-top: 2px solid red; /* Highlight top border */
+}
+  
+#sessionTable tr.drop-below td {
+    border-bottom: 2px solid red; /* Highlight bottom border */
+}
+
+/* Cosmetic - Highlight row on drag hover */
+#sessionTable tr.hover { 
+    background: #c00df7; 
+}
+
+.editable {
+    background-color: #ffffcc !important;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alert{
+    text-align: center;
+}
