@@ -3,62 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session Planner</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Session Planner</title>
 </head>
 <body>
-    <header>
-        <h1>Session Planner</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#add-session">Add Session</a></li>
-            <li><a href="#view-sessions">View Sessions</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="home">
-            <h2>Welcome to Session Planner</h2>
-            <p>Organize your sessions with ease.</p>
-        </section>
-        <section id="add-session">
-            <h2>Add Session</h2>
-            <form id="add-session-form">
-                <div>
-                    <label for="session-name">Session Name:</label>
-                    <input type="text" id="session-name" name="session-name" required>
+
+    <div class="container">
+        <h1>Session Creator</h1>
+        <nav>
+            <button onclick="showPage('warmUpPage')">Add Warm-Up</button>
+            <button onclick="showPage('activityPage')">Add Activity</button>
+            <button onclick="showPage('sessionPage')">View Sessions</button>
+        </nav>
+
+        <div id="warmUpPage" class="page">
+            <h2>Add Warm-Up</h2>
+            <form id="warmUpForm">
+                <div class="form-group">
+                    <label for="warmUp">Warm Up:</label>
+                    <input type="text" id="warmUp" name="warmUp" required>
                 </div>
-                <div>
-                    <label for="warm-up">Warm-Up:</label>
-                    <input type="text" id="warm-up" name="warm-up">
-                </div>
-                <div>
+                <button type="button" onclick="addWarmUp()">Add Warm-Up</button>
+            </form>
+        </div>
+
+        <div id="activityPage" class="page">
+            <h2>Add Activity</h2>
+            <form id="activityForm" class="activity-form">
+                <div class="small-input">
                     <label for="block">Block:</label>
-                    <select id="block" name="block">
+                    <select class="input-field" id="block" id="not-clear" name="block" required>
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
                         <option value="D">D</option>
                     </select>
                 </div>
-                <div>
-                    <label for="activity">Activity:</label>
-                    <input type="text" id="activity" name="activity" required>
+                <div class="small-input">
+                    <label for="unit">Unit:</label>
+                    <input class="input-field" type="number" id="unit" name="unit" value="1" readonly>
                 </div>
-                <button type="submit">Add Activity</button>
+                <div class="small-input">
+                    <label for="order">Order:</label>
+                    <input class="input-field" type="text" id="order" name="order" value="A1" readonly>
+                </div>
+                <div class="form-group full-width">
+                    <label for="exercise">Exercise:</label>
+                    <input class="input-field" type="text" id="exercise" name="exercise" required>
+                </div>
+                <div class="form-group">
+                    <label for="rpe">RPE:</label>
+                    <input class="input-field" style= "max-width:100px;"type="text" id="rpe" name="rpe">
+                </div>
+                <div class="form-group">
+                    <label for="sets">Sets:</label>
+                    <input class="input-field" style= "max-width:100px;"type="text" id="sets" name="sets" required>
+                </div>
+                <div class="form-group">
+                    <label for="reps">Reps:</label>
+                    <input class="input-field" style= "max-width:100px;"type="text" id="reps" name="reps" required>
+                </div>
             </form>
-        </section>
-        <section id="view-sessions">
-            <h2>View Sessions</h2>
-            <div id="sessions-list">
-                <!-- Sessions will be listed here -->
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Session Planner</p>
-    </footer>
+            <nav class="left">
+                <button class= "activity-add-button" type="button" id='activityaddbutton' onclick="addActivity()">Add Activity</button>
+                <button id="cancelButton" onclick="cancelEdit()">Cancel</button>
+            </nav>
+            <h2>Session Activities</h2>
+            <table id="sessionTable">
+                <colgroup>
+                    <col style="width: 5%;">
+                    <col style="width: 50%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                </colgroup>
+                <thead>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Exercise</th>
+                        <th>RPE</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="sessionActivities"></tbody>
+            </table>
+            <nav>
+                <button id="saveButton" onclick="">Save</button>
+                <button id="assignButton" onclick="">Assign to Group</button>
+            </nav>
+        </div>
+
+        <div id="sessionPage" class="page">
+            <h2>Session Activities</h2>
+            <table id="sessionTable">
+                <thead>
+                    <tr>
+                        <th>Warm Up</th>
+                        <th>Order</th>
+                        <th>Exercise</th>
+                        <th>RPE</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="sessionActivities"></tbody>
+            </table>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
+
